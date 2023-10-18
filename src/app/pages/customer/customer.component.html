@@ -1,0 +1,331 @@
+<!-- <div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-globe text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Capacity</p>
+              <p class="card-title">150GB
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-refresh"></i> Update Now
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-money-coins text-success"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Revenue</p>
+              <p class="card-title">$ 1,345
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-calendar-o"></i> Last day
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-vector text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Errors</p>
+              <p class="card-title">23
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-clock-o"></i> In the last hour
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-favourite-28 text-primary"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Followers</p>
+              <p class="card-title">+45K
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-refresh"></i> Update now
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Users Behavior</h5>
+        <p class="card-category">24 Hours performance</p>
+      </div>
+      <div class="card-body ">
+        <canvas id=chartHours width="400" height="100"></canvas>
+      </div>
+      <div class="card-footer ">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-history"></i> Updated 3 minutes ago
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Email Statistics</h5>
+        <p class="card-category">Last Campaign Performance</p>
+      </div>
+      <div class="card-body ">
+        <canvas id="chartEmail"></canvas>
+      </div>
+      <div class="card-footer ">
+        <div class="legend">
+          <i class="fa fa-circle text-primary"></i> Opened
+          <i class="fa fa-circle text-warning"></i> Read
+          <i class="fa fa-circle text-danger"></i> Deleted
+          <i class="fa fa-circle text-gray"></i> Unopened
+        </div>
+        <hr>
+        <div class="stats">
+          <i class="fa fa-calendar"></i> Number of emails sent
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card card-chart">
+      <div class="card-header">
+        <h5 class="card-title">NASDAQ: AAPL</h5>
+        <p class="card-category">Line Chart with Points</p>
+      </div>
+      <div class="card-body">
+        <canvas id="speedChart" width="400" height="100"></canvas>
+      </div>
+      <div class="card-footer">
+        <div class="chart-legend">
+          <i class="fa fa-circle text-info"></i> Tesla Model S
+          <i class="fa fa-circle text-warning"></i> BMW 5 Series
+        </div>
+        <hr/>
+        <div class="card-stats">
+          <i class="fa fa-check"></i> Data information certified
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div id="splash-screen" class="splash-screen" *ngIf="IsLoading">
+  <span style="font-size: 63px;">Loading ...</span>
+</div>
+
+<div>
+  <div class="input-group no-border" style=" width: 250px;
+  display: flex;
+  top: -1rem;">
+    <input type="text" value="" class="form-control" placeholder="Search...">
+    <div class="input-group-append">
+      <div class="input-group-text">
+        <i class="nc-icon nc-zoom-split"></i>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-round responsive-button" (click)="onAddData();"><i class="fa fa-plus" aria-hidden="true"></i> Add Customer</button>
+</div>
+<div>
+  <table>
+      <thead>
+          <tr>
+              <th class="light-black">Customer Name</th>
+              <th class="light-black">Mobile</th>
+              <th class="light-black">Location</th>
+              <th class="light-black">Provider Name</th>
+              <th class="light-black">Date</th>
+              <th class="light-black">Status</th>
+              <th class="light-black">Action</th>
+          </tr>
+      </thead>
+      <tbody style="font-size: 17px;">
+          <tr  *ngFor="let data of customerDetail | paginate:{ 
+            itemsPerPage: itemsPerPage,
+            currentPage: page,
+            totalItems: totalItems } ">
+              <th >
+                  {{data.name}}
+              </th>
+              <th >
+                  {{data.mobileNo}}
+              </th>
+              <th >
+                  {{data.locationId?.locationName}}
+              </th>
+              <th >
+                  {{data.providerId?.name}}
+              </th>
+              <th >
+                  {{data.startDate | date : "dd/MM/yyyy" }}
+              </th>
+              <th >
+                  {{data.active == true ? 'Active' : 'DeActive'}}
+              </th>
+              <th>
+                  <i (click)="onCustomerView(data)" class="fa fa-pencil"></i>
+              </th>
+          </tr>
+      </tbody>
+      <div id="pagination">
+
+      </div>
+  </table>
+  <div style="font-size: 17px;">
+      <pagination-controls *ngIf="customerDetail.length > 0" (pageChange)="renderPage($event)"></pagination-controls>
+      <span class="d-block mb-3">Showing {{ totalIeamPerPage }} of <b>{{ totalItems }}</b> Customers</span>
+  </div>
+  <ng-template #customerAddPopup>
+  
+  <div id="login-form-wrap" class="popup-repo">
+      <div *ngIf="tagShow">
+        <h4>{{showTitle}}</h4>
+      </div>
+      <i class="fa fa-times close-icon" aria-hidden="true" (click)="closeViewList()"></i>
+  
+      <form id="login-form" [formGroup]="customerDetailForm">
+          <p>
+              <input autocomplete="off" class="inputBox" type="text" id="username" name="username"
+                  formControlName="username" placeholder="Username"
+                  [ngClass]="isSave && username.invalid  ? 'border-error' : ''" required><i class="validation"></i>
+          </p>
+          <div *ngIf="isSave && username.invalid" class="form-valid">
+              <p>Username is required</p>
+          </div>
+          <p>
+              <input autocomplete="off" class="inputBox" type="text" id="address" name="address"
+                  formControlName="address" placeholder="Address"
+                  [ngClass]="isSave && address.invalid  ? 'border-error' : ''" required><i class="validation"></i>
+          </p>
+          <div *ngIf="isSave && address.invalid" class="form-valid">
+              <p>Address is required</p>
+          </div>
+          <p>
+              <input autocomplete="off" class="inputBox" type="text" id="pinCode" name="pinCode"
+                  formControlName="pinCode" placeholder="Pincode"
+                  [ngClass]="isSave && pinCode.invalid  ? 'border-error' : ''" required><i class="validation"></i>
+          </p>
+          <div *ngIf="isSave && pinCode.invalid" class="form-valid">
+              <p>PinCode is required</p>
+          </div>
+            <div>
+            <select class="inputBox" style="font-size: 16px; padding-inline: 14px;color: #000000; "  formControlName="location"  id="location" name="location"  [ngClass]="isSave && location.invalid  ? 'border-error' : ''" required >
+              <option  *ngFor="let data of locationData" [value]="data._id">
+                          {{data.locationName}}
+                          </option>
+                      </select>
+           <div *ngIf="isSave && location.invalid" class="form-valid" >
+                          <p style="top: 5px;">location is required</p>
+                      </div>
+          </div>
+          <p>
+              <input autocomplete="off" class="inputBox" type="text" id="mobileNo" name="mobileNo"
+                  formControlName="mobileNo" placeholder="mobileNo"
+                  [ngClass]="isSave && mobileNo.invalid  ? 'border-error' : ''" required><i class="validation"></i>
+          </p>
+          <div *ngIf="isSave && mobileNo.invalid" class="form-valid">
+              <p>mobileNo is required</p>
+          </div>
+          <p>
+              <input autocomplete="off" class="inputBox" type="text" id="email" name="email"
+                  formControlName="email" placeholder="email"
+                  [ngClass]="isSave && email.invalid  ? 'border-error' : ''" required><i class="validation"></i>
+          </p>
+          <div *ngIf="isSave && email.invalid" class="form-valid">
+              <p>email is required</p>
+          </div>
+          <p>
+              <input autocomplete="off" class="inputBox" type="text" id="noOfPlant" name="noOfPlant"
+                  formControlName="noOfPlant" placeholder="noOfPlant"
+                  [ngClass]="isSave && noOfPlant.invalid  ? 'border-error' : ''" required><i class="validation"></i>
+          </p>
+          <div *ngIf="isSave && noOfPlant.invalid" class="form-valid">
+              <p>No Of Plant is required</p>
+          </div>
+          <select class="inputBox" style="font-size: 16px; padding-inline: 10px; color: #789188; "  formControlName="provider"  id="provider" name="provider"  [ngClass]="isSave && provider.invalid  ? 'border-error' : ''" required >
+              <option  *ngFor="let data of providerData" [value]="data._id">
+                          {{data.name}}
+                          </option>
+                      </select>
+          <div *ngIf="isSave && address.invalid" class="form-valid">
+              <p>Provider is required</p>
+          </div>
+          <p>
+              <input autocomplete="off" class="inputBox" type="text" id="startDate" name="startDate"
+                  formControlName="startDate" placeholder="startDate"
+                  [ngClass]="isSave && startDate.invalid  ? 'border-error' : ''" required><i class="validation"></i>
+          </p>
+          <div *ngIf="isSave && startDate.invalid" class="form-valid">
+              <p>startDate is required</p>
+          </div>
+          
+          <p>
+              <button class="btn btn-primary btn-round" (click)="onSubmit()">Save</button>  
+          </p>
+      </form>
+  
+  </div>
+  </ng-template>
+  
+</div>
+
