@@ -1,5 +1,5 @@
 import { Component, TemplateRef, ViewChild,OnInit } from '@angular/core';
-import { CustomerService } from '../../service/customer-services/customer.service';
+import { CustomerService } from '../../service/customer-service/customer.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
@@ -13,7 +13,7 @@ import * as moment from 'moment';
 })
 
 export class customerComponent implements OnInit{
-
+  searchData:any;
   // public canvas : any;
   // public ctx;
   // public chartColor;
@@ -278,6 +278,11 @@ export class customerComponent implements OnInit{
       this.providerData = data.data
     })
    }
+   onSearchData(){
+    this.CustomerService.getAllCustomerDetail(this.searchData).subscribe((data:any)=>{
+      this.customerDetail = data.data;
+    });
+  }
    renderPage(e:any){
     this.page = e;
    }
@@ -298,7 +303,7 @@ export class customerComponent implements OnInit{
   }
   onLoadCustomer(){
     this.IsLoading = true;
-    this.CustomerService.getAllCustomerDetail().subscribe((data:any)=>{
+    this.CustomerService.getAllCustomerDetail('').subscribe((data:any)=>{
       this.customerDetail = data.data;
       if(this.customerDetail.length > 0){
         this.totalItems = this.customerDetail.length
