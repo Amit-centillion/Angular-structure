@@ -177,10 +177,10 @@
   <div class="input-group no-border" style=" width: 250px;
   display: flex;
   top: -1rem;">
-    <input type="text" value="" class="form-control" placeholder="Search...">
+    <input type="text" value="" [(ngModel)]="SearchBox" class="form-control" placeholder="Search...">
     <div class="input-group-append">
       <div class="input-group-text">
-        <i class="nc-icon nc-zoom-split"></i>
+        <i class="nc-icon nc-zoom-split" (click)="onClickSearch()"></i>
       </div>
     </div>
   </div>

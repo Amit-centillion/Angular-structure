@@ -210,6 +210,7 @@ export class customerComponent implements OnInit{
   //       options: chartOptions
   //     });
   //   }
+  SearchBox:any;
   tagShow:boolean = true
   showTitle:any;
   IsLoading:boolean = false;
@@ -221,7 +222,7 @@ export class customerComponent implements OnInit{
   locationData:any;
   providerData:any;
   itemsPerPage = 15;
-  totalIeamPerPage =0;
+  totalIeamPerPage =15;
   page = 1;
   totalItems: any;
   isSave: boolean = false;
@@ -281,6 +282,11 @@ export class customerComponent implements OnInit{
    renderPage(e:any){
     this.page = e;
    }
+   onClickSearch(){
+    this.CustomerService.getAllCustomerDetail(this.SearchBox).subscribe((data:any)=>{
+      this.customerDetail = data.data;
+    });
+   }
   initFrom(){
     this.customerDetailForm = new FormGroup({
       username: new FormControl(),
@@ -298,7 +304,7 @@ export class customerComponent implements OnInit{
   }
   onLoadCustomer(){
     this.IsLoading = true;
-    this.CustomerService.getAllCustomerDetail().subscribe((data:any)=>{
+    this.CustomerService.getAllCustomerDetail('').subscribe((data:any)=>{
       this.customerDetail = data.data;
       if(this.customerDetail.length > 0){
         this.totalItems = this.customerDetail.length
