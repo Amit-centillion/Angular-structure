@@ -1,0 +1,233 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  
+  .light-black {
+    background-color: #f2f2f2;
+    /* Light black color */
+  }
+  
+  .white {
+    background-color: #ffffff;
+    /* White color */
+  }
+  
+  .popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .inputBox {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Add custom styles to your ng-select */
+  .custom-ng-select {
+    width: 200px;
+    /* Set the desired width */
+    border: 1px solid #ccc;
+    /* Add border styles */
+    padding: 5px;
+    /* Add some padding */
+    border-radius: 5px;
+    /* Add rounded corners */
+    background-color: #f2f2f2;
+    /* Set background color */
+    color: #333;
+    /* Set text color */
+  }
+  
+  /* Style the dropdown arrow */
+  .custom-ng-select .ng-arrow-wrapper {
+    /* Add your arrow styles here */
+    color: blue;
+  }
+  
+  /* Style the dropdown list */
+  .custom-ng-select .ng-dropdown-panel {
+    /* Add your dropdown list styles here */
+    border: 1px solid #ddd;
+  }
+  
+  /* Style the selected item */
+  .custom-ng-select .ng-value-container {
+    /* Add your selected item styles here */
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .custom-ng-option {
+    background-color: #f2f2f2;
+    /* Background color */
+    color: #333;
+    /* Text color */
+    padding: 5px 10px;
+    /* Padding around each option */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+  }
+  
+  .popup-repo {
+    // overflow-y: scroll;
+    // overflow-x: hidden;
+    height: 26rem;
+    white-space: nowrap;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  
+  .close-icon {
+    display: flex;
+    /* left: 22px; */
+    /* top: 12rem; */
+    position: absolute;
+    left: 35rem;
+    top: 41px;
+  }
+  
+  .button-settting {
+    width: 178px;
+    height: 50px;
+    font-size: 17px;
+    margin-left: 120rem;
+    margin-left: 1918px;
+    border: none;
+  }
+  
+  /* Reset some default styles for the body */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Create the grid container */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three equal-width columns */
+    grid-gap: 10px;
+    /* Gap between grid items */
+    margin: 20px;
+  }
+  
+  /* Style for grid items */
+  .grid-item {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Specific styling for individual grid items (optional) */
+  .grid-item:nth-child(odd) {
+    background-color: #e74c3c;
+  }
+  
+  /* Responsive design: Make the grid items stack on smaller screens */
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      /* One column on small screens */
+    }
+  }
+  
+  .responsive-button {
+    position: absolute;
+    top: 88px;
+    right: 31px;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    /* border: none; */
+    border-radius: 5px;
+    cursor: pointer;
+    width: 184px;
+  }
+  
+  ::ng-deep .modal-backdrop {
+    position: relative !important;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000
+  }
+  
+  ::ng-deep .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 54%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 0.3rem;
+    outline: 0;
+    left: 18rem;
+    top: 8rem;
+  }
+  .border-error:not(ng-select) {
+    border: 1px solid red !important;
+  }
+  
+  .border-error>div {
+    border: 1px solid red !important;
+  }
+  .form-valid {
+    font-size: 14px;
+    color: #ec1616;
+    /* display: flex; */
+  }
+  
+  .form-valid-email {
+    font-size: 14px;
+    color: #ec1616;
+   
+  }
+  .splash-screen {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Helvetica, 'sans-serif';
+    background-color: #ffffff78;
+    color: #5E6278;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 400;
+    top: 0;
+    left: 0;
+  }
+  .submit-btn {
+    width: 100px;
+    height: 38px;
+    border: none;
+    font-size: 20px;
+  }
+  .class-search{
+    width: 250px;
+    display: flex;
+    top: -1rem;
+  }

@@ -8,8 +8,8 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { customerComponent }       from '../../pages/customer/customer.component';
 import { UserComponent }            from '../../pages/user/user.component';
 import { ProviderComponent }           from '../../pages/provider/provider.component';
+import { Logincomponent }           from '../../pages/login/login.component';
 // import { TypographyComponent }      from '../../pages/typography/typography.component';
-// import { IconsComponent }           from '../../pages/icons/icons.component';
 // import { MapsComponent }            from '../../pages/maps/maps.component';
 // import { NotificationsComponent }   from '../../pages/notifications/notifications.component';
 // import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
@@ -29,9 +29,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     customerComponent,
     UserComponent,
     ProviderComponent,
+    Logincomponent,
     // UpgradeComponent,
     // TypographyComponent,
-    // IconsComponent,
     // MapsComponent,
     // NotificationsComponent,
   ]

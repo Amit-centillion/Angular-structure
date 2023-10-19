@@ -1,0 +1,32 @@
+<div id="splash-screen" class="splash-screen"  *ngIf="IsLoading">
+  <span>Loading ...</span>
+</div>
+<div id="login-form-wrap" style="margin-top: 151px;">
+    <h2>Login</h2>
+    <form id="login-form" [formGroup]="loginForm">
+      <p>
+        <input class="inputBox" type="text" autocomplete="off" id="username" name="username" formControlName="username"
+          placeholder="Username" [ngClass]="isSave && username.invalid  ? 'border-error' : ''" required><i
+          class="validation"></i>
+      </p>
+      <div *ngIf="isSave && username.invalid" class="form-valid">
+        <p>Username is required</p>
+      </div>
+
+      <p>
+        <input class="inputBox" type="password" autocomplete="off" id="password" name="password"
+          formControlName="password" placeholder="Passsword"
+          [ngClass]="isSave && password.invalid  ? 'border-error' : ''" required><i class="validation"></i>
+      </p>
+      <div *ngIf="isSave && password.invalid" class="form-valid-email">
+        <p>Passsword is required</p>
+      </div>
+      <p>
+        <input type="submit" id="login" value="Login" (click)="onSubmit()">
+      </p>
+    </form>
+    <div id="create-account-wrap">
+      <p>Not a member? <a routerLink="/auth/singup">Create Account</a>
+      <p>
+    </div>
+  </div>
