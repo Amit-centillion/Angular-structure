@@ -3,6 +3,7 @@ import { CustomerService } from '../../service/customer-service/customer.service
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'customer-cmp',
@@ -225,7 +226,7 @@ export class customerComponent implements OnInit{
   page = 1;
   totalItems: any;
   isSave: boolean = false;
-  constructor(private CustomerService: CustomerService, private modalService: NgbModal){
+  constructor(private CustomerService: CustomerService, private modalService: NgbModal,private toastr: ToastrService){
 
   }
 
@@ -305,6 +306,7 @@ export class customerComponent implements OnInit{
     this.IsLoading = true;
     this.CustomerService.getAllCustomerDetail('').subscribe((data:any)=>{
       this.customerDetail = data.data;
+      this.toastr.success('Customers get successfully!');
       if(this.customerDetail.length > 0){
         this.totalItems = this.customerDetail.length
       }

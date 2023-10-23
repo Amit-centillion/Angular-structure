@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ProviderService } from 'app/service/provider-service/provider.service';
 import * as moment from 'moment';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
     selector: 'provider-cmp',
     moduleId: module.id,
@@ -34,7 +36,7 @@ export class ProviderComponent{
     page = 1;
     totalItems: any;
     isSave: boolean = false;
-    constructor(private ProviderService: ProviderService, private modalService: NgbModal){
+    constructor( private toastr: ToastrService,private ProviderService: ProviderService, private modalService: NgbModal){
   
     }
     getSerialNumber(index: number): number {
@@ -102,7 +104,7 @@ export class ProviderComponent{
       this.IsLoading = true;
       this.ProviderService.providerSummary().subscribe((data:any)=>{
         this.providerDetail = data.data;
-        console.log('this.providerDetail', this.providerDetail)
+        this.toastr.success('Providers get successfully!');
         if(this.providerDetail.length > 0){
           this.totalItems = this.providerDetail.length
         }

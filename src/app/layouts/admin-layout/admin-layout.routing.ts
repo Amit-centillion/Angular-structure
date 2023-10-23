@@ -5,7 +5,7 @@ import { UserComponent } from '../../pages/user/user.component';
 import { ProviderComponent } from '../../pages/provider/provider.component';
 import { Logincomponent } from '../../pages/login/login.component';
 import { customerSummaryComponent } from '../../pages/customer-summary/customer-summary.component';
-// import { TypographyComponent } from '../../pages/typography/typography.component';
+import { leadComponent } from '../../pages/leads/lead.component';
 // import { NotificationsComponent } from '../../pages/notifications/notifications.component';
 // import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
 
@@ -15,7 +15,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user',           component: UserComponent },
     { path: 'login',          component: Logincomponent },
     { path: 'customer-summary',   component:  customerSummaryComponent},
-    // { path: 'typography',     component: TypographyComponent },
+    { path: 'lead',     component: leadComponent },
     // { path: 'notifications',  component: NotificationsComponent },
     // { path: 'upgrade',        component: UpgradeComponent }
 ];

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CustomerSummaryService} from '../../service/customer-summary/customer-summary.service'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+
 declare var google: any;
 
 @Component({
@@ -20,7 +22,8 @@ export class customerSummaryComponent {
     customerCompletedService:any;
     customerServiceform: FormGroup;
     customerAndProvider:boolean = false
-    constructor(private CustomerSummaryService: CustomerSummaryService, private modalService: NgbModal){
+    constructor(private CustomerSummaryService: CustomerSummaryService, private modalService: NgbModal,    private toastr: ToastrService,
+        ){
     }
     ngOnInit(){
         this.getAllcustomers();
@@ -46,6 +49,7 @@ export class customerSummaryComponent {
             let serviceDetail:any = data.data?.planDetail[0]?.customerId;
             this.userDeivde(serviceDetail)
             this.IsLoading = false;
+            this.toastr.success('Customers get successfully!');
         })
     }
     userDeivde(data){
