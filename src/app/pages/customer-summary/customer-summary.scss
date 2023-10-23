@@ -16,3 +16,52 @@
     top: 0;
     left: 0;
   }
+  * {
+    box-sizing: border-box;
+  }
+  
+  .row {
+    margin-left:-5px;
+    margin-right:-5px;
+  }
+    
+  .column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .statusGreen{
+    background-color: #6bf26b;
+    color: black;
+    border-radius: 10px;
+  }
+  .statusRed{
+    background-color: #ff6767;
+    padding-inline: 8px;
+    width: 94px;
+    color: #000;
+    border-radius: 10px;
+  }

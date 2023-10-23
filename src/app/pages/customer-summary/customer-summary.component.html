@@ -15,12 +15,83 @@
   <span style="font-size: 63px;">Loading ...</span>
 </div>
 <div>
-  <div>
-    <p>Select customer</p>
+  <form [formGroup]="customerServiceform">
+    <div>
+      <p>Select customer</p>
+    </div>
+    <select class="inputBox" style="font-size: 16px; padding-inline: 14px;color: #000000; " 
+     id="customer" name="customer" formControlName="customerId"  (change)="onChangeCustomer($event)">
+      <option  *ngFor="let data of customerDetail" [value]="data._id" >
+                  {{data.name}}
+                  </option>
+              </select>   
+  </form>
+  <div class="row" style="padding-top: 23px;" *ngIf="customerAndProvider">
+    <div class="column">
+      <table>
+        <tr>
+          <th>Customer Detail</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>Name:</th>
+          <td>{{userDetail?.customerName}}</td>
+        </tr>
+        <tr>
+          <th>Location:</th>
+          <td>{{userDetail?.customerLocation}}</td>
+        </tr>
+        <tr>
+          <th>Mobile:</th>
+          <td>{{userDetail?.customerMobile}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="column">
+      <table>
+        <tr>
+          <th>Provider Detail</th>
+        </tr>
+        <tr>
+          <th>Name:</th>
+          <td>{{userDetail?.providerName}}</td>
+        </tr>
+        <tr>
+          <th>Location:</th>
+          <td>{{userDetail?.providerLocation}}</td>
+        </tr>
+        <tr>
+          <th>Mobile:</th>
+          <td>{{userDetail?.providerMobile}}</td>
+        </tr>
+      </table>
+    </div>
   </div>
-  <select class="inputBox" style="font-size: 16px; padding-inline: 14px;color: #000000; "  id="customer" name="customer">
-    <option  *ngFor="let data of customerDetail" (change)="onChangeCustomer()">
-                {{data.name}}
-                </option>
-            </select>
-</div>
+  <div class="card card-upgrade" style="top: 22px;" *ngIf="customerAndProvider">
+    <div class="card-body">
+      <div class="table-responsive table-upgrade">
+        <table class="table">
+          <thead>
+              <tr>
+                  <th class="light-black">Service Date</th>
+                  <th class="light-black">Completed Date</th>
+                  <th class="light-black">Status</th>
+              </tr>
+          </thead>
+          <tbody style="font-size: 17px;">
+              <tr  *ngFor="let data of customerServiceDetail ">
+                  <th >
+                      {{data.pendingDate  | date : "dd/MM/yyyy"}}
+                  </th>
+                  <th >
+                      {{data.completedDate  | date : "dd/MM/yyyy"}}
+                  </th>
+                  <th>
+                      <label [ngClass]="data.status == 'COMPLETED' ? 'statusGreen' : 'statusRed'">{{data.status}}</label>
+                  </th>
+              </tr>
+          </tbody>
+      </table>
+      </div>  
+    </div>
+  </div>

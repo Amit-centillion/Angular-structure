@@ -14,4 +14,7 @@ export class CustomerSummaryService {
   getAllCustomerDetail(search:any){
     return this.httpClient.get(`${this.baseUrl }customer/getAll?search=${search}`);
   }
+  getCustomerServiceDetail(search:any){
+    return this.httpClient.get(`${this.baseUrl}planService/customerDashboard?customerId=${search}`)
+  }
 }
