@@ -1,0 +1,26 @@
+<!-- 
+<div class="row">
+  <div class="col-md-12">
+    <div class="card ">
+      <div class="card-header ">
+        Google Maps
+      </div>
+      <div class="card-body ">
+        <div id="map" class="map"></div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div id="splash-screen" class="splash-screen" *ngIf="IsLoading">
+  <span style="font-size: 63px;">Loading ...</span>
+</div>
+<div>
+  <div>
+    <p>Select customer</p>
+  </div>
+  <select class="inputBox" style="font-size: 16px; padding-inline: 14px;color: #000000; "  id="customer" name="customer">
+    <option  *ngFor="let data of customerDetail" (change)="onChangeCustomer()">
+                {{data.name}}
+                </option>
+            </select>
+</div>

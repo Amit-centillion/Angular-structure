@@ -10,7 +10,7 @@ import { UserComponent }            from '../../pages/user/user.component';
 import { ProviderComponent }           from '../../pages/provider/provider.component';
 import { Logincomponent }           from '../../pages/login/login.component';
 // import { TypographyComponent }      from '../../pages/typography/typography.component';
-// import { MapsComponent }            from '../../pages/maps/maps.component';
+import { customerSummaryComponent }            from '../../pages/customer-summary/customer-summary.component';
 // import { NotificationsComponent }   from '../../pages/notifications/notifications.component';
 // import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
 
@@ -30,9 +30,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UserComponent,
     ProviderComponent,
     Logincomponent,
+    customerSummaryComponent,
     // UpgradeComponent,
     // TypographyComponent,
-    // MapsComponent,
     // NotificationsComponent,
   ]
 })

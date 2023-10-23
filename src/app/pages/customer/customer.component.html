@@ -186,54 +186,61 @@
   </div>
   <button class="btn btn-primary btn-round responsive-button" (click)="onAddData();"><i class="fa fa-plus" aria-hidden="true"></i> Add Customer</button>
 </div>
+<div class="card card-upgrade">
+  <div class="card-body">
+    <div class="table-responsive table-upgrade">
+      <table class="table">
+        <thead>
+            <tr>
+                <th class="light-black">Customer Name</th>
+                <th class="light-black">Mobile</th>
+                <th class="light-black">Location</th>
+                <th class="light-black">Provider Name</th>
+                <th class="light-black">Date</th>
+                <th class="light-black">Status</th>
+                <th class="light-black">Action</th>
+            </tr>
+        </thead>
+        <tbody style="font-size: 17px;">
+            <tr  *ngFor="let data of customerDetail | paginate:{ 
+              itemsPerPage: itemsPerPage,
+              currentPage: page,
+              totalItems: totalItems } ">
+                <th >
+                    {{data.name}}
+                </th>
+                <th >
+                    {{data.mobileNo}}
+                </th>
+                <th >
+                    {{data.locationId?.locationName}}
+                </th>
+                <th >
+                    {{data.providerId?.name}}
+                </th>
+                <th >
+                    {{data.startDate | date : "dd/MM/yyyy" }}
+                </th>
+                <th >
+                    {{data.active == true ? 'Active' : 'DeActive'}}
+                </th>
+                <th>
+                    <i (click)="onCustomerView(data)" class="fa fa-pencil"></i>
+                </th>
+            </tr>
+        </tbody>
+        <div id="pagination">
+  
+        </div>
+    </table>
+    </div>  
+  </div>
+</div>
 <div>
-  <table>
-      <thead>
-          <tr>
-              <th class="light-black">Customer Name</th>
-              <th class="light-black">Mobile</th>
-              <th class="light-black">Location</th>
-              <th class="light-black">Provider Name</th>
-              <th class="light-black">Date</th>
-              <th class="light-black">Status</th>
-              <th class="light-black">Action</th>
-          </tr>
-      </thead>
-      <tbody style="font-size: 17px;">
-          <tr  *ngFor="let data of customerDetail | paginate:{ 
-            itemsPerPage: itemsPerPage,
-            currentPage: page,
-            totalItems: totalItems } ">
-              <th >
-                  {{data.name}}
-              </th>
-              <th >
-                  {{data.mobileNo}}
-              </th>
-              <th >
-                  {{data.locationId?.locationName}}
-              </th>
-              <th >
-                  {{data.providerId?.name}}
-              </th>
-              <th >
-                  {{data.startDate | date : "dd/MM/yyyy" }}
-              </th>
-              <th >
-                  {{data.active == true ? 'Active' : 'DeActive'}}
-              </th>
-              <th>
-                  <i (click)="onCustomerView(data)" class="fa fa-pencil"></i>
-              </th>
-          </tr>
-      </tbody>
-      <div id="pagination">
-
-      </div>
-  </table>
+ 
   <div style="font-size: 17px;">
       <pagination-controls *ngIf="customerDetail.length > 0" (pageChange)="renderPage($event)"></pagination-controls>
-      <span class="d-block mb-3">Showing {{ totalIeamPerPage }} of <b>{{ totalItems }}</b> Customers</span>
+      <!-- <span class="d-block mb-3">Showing {{ totalIeamPerPage }} of <b>{{ totalItems }}</b> Customers</span> -->
   </div>
   <ng-template #customerAddPopup>
   
