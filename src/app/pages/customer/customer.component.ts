@@ -1,7 +1,7 @@
 import { Component, TemplateRef, ViewChild,OnInit } from '@angular/core';
 import { CustomerService } from '../../service/customer-service/customer.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
 
@@ -15,6 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 
 export class customerComponent implements OnInit{
   searchData:any;
+  nameForm: FormGroup;
   // public canvas : any;
   // public ctx;
   // public chartColor;
@@ -226,8 +227,8 @@ export class customerComponent implements OnInit{
   page = 1;
   totalItems: any;
   isSave: boolean = false;
-  constructor(private CustomerService: CustomerService, private modalService: NgbModal,private toastr: ToastrService){
-
+  constructor(private CustomerService: CustomerService, private modalService: NgbModal,private toastr: ToastrService,private fb: FormBuilder){
+   
   }
 
   get username(){
@@ -264,7 +265,35 @@ export class customerComponent implements OnInit{
     this.onLoadCustomer();
     this.dropDownData();
     this.initFrom();
+    this.AddFromProcess();
   }
+  AddFromProcess(){
+    this.nameForm = this.fb.group({
+      names: this.fb.array([this.createNameField()])
+    });
+  }
+  submitData(){
+    console.log("from data",this.nameForm.value)
+  }
+  createNameField(): FormGroup {
+    return this.fb.group({
+      name: ['', Validators.required]
+    });
+  }
+
+  get names() {
+    return this.nameForm.get('names') as FormArray;
+  }
+
+  addNameField() {
+    this.names.push(this.createNameField());
+  }
+
+  removeName(index: number) {
+    this.names.removeAt(index);
+  }
+
+
   dropDownData(){
     this.getAllLocation();
     this.getAllProvider();
@@ -300,6 +329,7 @@ export class customerComponent implements OnInit{
       provider: new FormControl(),
       startDate: new FormControl(),
       password: new FormControl(),
+      testCheck:new FormControl(false)
     })
   }
   onLoadCustomer(){
@@ -342,8 +372,9 @@ export class customerComponent implements OnInit{
     });
   }
   onSubmit(){
+    console.log("this.from.value",this.customerDetailForm.value)
     this.isSave = true;
-  }
+      }
   setDataValueFrom(detail:any){
     this.customerDetailForm = new FormGroup({
       username: new FormControl(detail?.name === null ? null : detail?.name),

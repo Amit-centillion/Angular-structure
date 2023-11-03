@@ -1,50 +1,62 @@
-<div class="card card-upgrade">
-  <div class="card-body">
-    <div class="table-responsive table-upgrade">
-      <table class="table">
-        <thead>
-            <tr>
-                <th class="light-black">Reference</th>
-                <th class="light-black">Status</th>
-                <th class="light-black">Sub Status</th>
-                <th class="light-black">Assigned To</th>
-                <th class="light-black">Contact Reference</th>
-                <th class="light-black">Lead Type</th>
-                <th class="light-black">Finance	Priority</th>
-            </tr>
-        </thead>
-        <tbody style="font-size: 17px;">
-            <!-- <tr  *ngFor="let data of customerDetail | paginate:{ 
-              itemsPerPage: itemsPerPage,
-              currentPage: page,
-              totalItems: totalItems } ">
-                <th >
-                    {{data.name}}
-                </th>
-                <th >
-                    {{data.mobileNo}}
-                </th>
-                <th >
-                    {{data.locationId?.locationName}}
-                </th>
-                <th >
-                    {{data.providerId?.name}}
-                </th>
-                <th >
-                    {{data.startDate | date : "dd/MM/yyyy" }}
-                </th>
-                <th >
-                    {{data.active == true ? 'Active' : 'DeActive'}}
-                </th>
-                <th>
-                    <i (click)="onCustomerView(data)" class="fa fa-pencil"></i>
-                </th>
-            </tr> -->
-        </tbody>
-        <div id="pagination">
-  
-        </div>
-    </table>
-    </div>  
+   <div class="progress-bar">
+    <ul>
+      <li *ngFor="let step of steps; let i = index" (click)="activateStep(i)" [ngStyle]="{'background-color': step.active ? 'blue' : 'gray'}">
+        {{ step.name }}
+      </li>
+    </ul>
   </div>
-</div>
+
+  <div class="container">
+    <from [formGroup]="basicDetailForm">
+      <div class="row">
+        <div class="col-25">
+          <label for="Name">First Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" formControlName="FirstName" placeholder="Enter FirstName">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="Name">Last Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" formControlName="LastName" placeholder="Enter LastName">
+        </div>
+      </div>
+    </from>
+    <form action="/action_page.php" [formGroup]="nameForm">
+      <div formArrayName="nameFields">
+        <div *ngFor="let nameField of nameFields.controls; let i = index" [formGroupName]="i" style="    margin-top: 58px;">
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">First Energy Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" formControlName="firstEnergyName" id="firstEnergyName{{i}}" placeholder="Enter name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Last Energy Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" formControlName="lastEnergyName" id="lastEnergyName{{i}}" placeholder="Enter name">
+            </div>
+        </div>
+        <div class="row" style="    display: block;">
+          <input *ngIf="i !== 0" type="button" (click)="removeNameField(i)" type="submit" value="Remove">
+        </div>
+       <div>
+    </div>
+  </div>
+      <div class="row" style="padding-top: 9px;">
+        <input (click)="addNameField()" type="submit" value="Add User">&nbsp;
+        <input (click)="onSubmit()" type="submit" value="Submit">
+      </div>
+      </div>
+    </form>
+  </div>
+  
+  
+  

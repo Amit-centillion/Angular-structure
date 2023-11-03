@@ -6,10 +6,12 @@ import { environment } from 'environments/environment';
   providedIn: 'root'
 })
 export class leadService {
-  public baseUrl = 'https://localhost:44334/api/AdditionalDetails';
+  public baseUrl = 'http://52.206.87.203:81/api';
 
   constructor(
     public httpClient: HttpClient,
   ) { }
-  
+  getAllLeadDetails(data:any){
+    return this.httpClient.post(`${this.baseUrl}/Leads/GetAllLeadsDetails`,data,{ responseType: 'text' })
+  }
 }
